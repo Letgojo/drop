@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:triptokorea/Pages/Login/Login.dart';
+import 'package:triptokorea/Pages/Setting/Change.dart';
+import 'package:triptokorea/Pages/Setting/Delete.dart';
+import 'package:triptokorea/Pages/Setting/Introduce.dart';
 
 class Setting extends StatelessWidget {
   const Setting({super.key});
@@ -9,13 +12,13 @@ class Setting extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.transparent,
         elevation: 0,
         centerTitle: true,
         automaticallyImplyLeading: false, //Navigator back 없애기
         iconTheme: IconThemeData(color: Colors.black),
         title: Text(
-          "Setting",
+          "My Page",
           style: GoogleFonts.jua(
               textStyle: TextStyle(fontSize: 20, color: Colors.black)),
         ),
@@ -53,7 +56,10 @@ class Setting extends StatelessWidget {
                   Icons.arrow_forward_ios,
                   color: Colors.black,
                 ),
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => const Change()));
+                },
               ),
               ListTile(
                 title: Text(
@@ -64,7 +70,12 @@ class Setting extends StatelessWidget {
                   Icons.arrow_forward_ios,
                   color: Colors.black,
                 ),
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const Introduce()));
+                },
               ),
               ListTile(
                 title: Text(
@@ -75,7 +86,10 @@ class Setting extends StatelessWidget {
                   Icons.arrow_forward_ios,
                   color: Colors.black,
                 ),
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => const Delete()));
+                },
               ),
 
               ListTile(
@@ -95,7 +109,7 @@ class Setting extends StatelessWidget {
                       builder: (context) {
                         return Container(
                           child: AlertDialog(
-                            content: Text("로그아웃 되었습니다.다시 로그인하시기 바랍니다.",
+                            content: Text("로그아웃 되었습니다. 다시 로그인하시기 바랍니다.",
                                 style: GoogleFonts.jua(
                                     textStyle: TextStyle(
                                         fontSize: 15, color: Colors.red))),
@@ -130,3 +144,18 @@ class Setting extends StatelessWidget {
     );
   }
 }
+
+
+// Container(
+//                                 child: Text(
+//                                   "Tour Planner",
+//                                   style: GoogleFonts.jua(
+//                                       textStyle: TextStyle(
+//                                           fontSize: 17, color: Colors.black)),
+//                                 ),
+//                               ),
+//                               Container(
+//                                 height: 1,
+//                                 width: 500,
+//                                 color: Colors.black,
+//                               ),

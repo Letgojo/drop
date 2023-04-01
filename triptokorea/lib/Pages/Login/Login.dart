@@ -116,7 +116,10 @@ class _LoginState extends State<Login> {
                             textStyle: TextStyle(fontSize: 20))),
                     onPressed: () {
                       Api.login(email.text, password.text);
-                    
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const menuBar()));
                     },
                     style: ElevatedButton.styleFrom(
                         shape: RoundedRectangleBorder(

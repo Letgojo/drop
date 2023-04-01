@@ -58,7 +58,7 @@ class HomePage extends StatelessWidget {
                       },
                       style: ElevatedButton.styleFrom(
                           primary: Colors.transparent,
-                          shadowColor: Colors.transparent,
+                          shadowColor: Colors.white,
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(12))))),
 
